@@ -1,0 +1,12 @@
+<h1>Welcome, <%=current_user.username%>  </h1>
+
+<ul>
+  <% User.all.each do |user| %>
+    <li> <a href='<%= user_url(user) %>' > <%= user.username %></a></li>
+  <% end %>
+</ul>
+
+<form class="" action="<%=session_url%> " method="post">
+  <input type="hidden" name="_method" value="delete">
+  <input type="submit" name="" value="Logout!">
+</form>
